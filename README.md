@@ -28,7 +28,7 @@ Bienvenido al proyecto DIOR, una plataforma de comercio electrónico que permite
   - PHP (Laravel)
 - **Frontend**:
   - HTML
-  - CSS (Tailwind CSS)
+  - CSS 
 - **Base de Datos**:
   - MySQL
 - **API**:
