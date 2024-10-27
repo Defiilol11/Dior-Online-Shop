@@ -62,7 +62,7 @@
     <script>
         function checkRegister(event) {
             // Simulación de éxito o error
-            const registerSuccess = false; // Cambia esto a true si el registro es exitoso
+            const registerSuccess = true; // Cambia esto a true si el registro es exitoso
 
             if (!registerSuccess) {
                 event.preventDefault(); // Evita que se envíe el formulario si falla
