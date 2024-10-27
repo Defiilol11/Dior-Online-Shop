@@ -1,0 +1,110 @@
+/* Estilos generales */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    height: 100%;
+}
+
+/* Centrar el formulario en la página */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor del logo */
+.logo-container {
+    text-align: center;
+    margin-bottom: 30px; /* Aumenta el espacio entre el logo y el formulario */
+}
+
+.logo {
+    height: 50px; /* Ajusta el tamaño del logo para evitar superposición */
+    max-width: 100%;
+    margin-top: -200px;
+    object-fit: contain;
+}
+
+/* Formulario */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit {
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+    border: none;
+}
+
+.btn-submit:hover {
+    background-color: #555;
+}
+
+.btn-register {
+    background-color: white;
+    color: #333;
+    width: 200px;
+    font-weight: bold;
+    border: 1px solid #333;
+}
+
+.btn-register:hover {
+    background-color: #333;
+    color: white;
+}
+
+/* Estilo para el cuerpo */
+.bg-light-gray {
+    background-color: #f5f5f5;
+}
+
+.text-center {
+    text-align: center;
+}
+

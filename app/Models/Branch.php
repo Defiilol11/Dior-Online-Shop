@@ -9,10 +9,9 @@ class Branch extends Model
 {
     use HasFactory;
 
-    protected $table = 'branches'; // Nombre de la tabla
-    protected $primaryKey = 'id'; // Clave primaria
+    protected $table = 'branches';
+    protected $primaryKey = 'id';
 
-    // Campos que se pueden llenar masivamente
     protected $fillable = [
         'name',
         'address',

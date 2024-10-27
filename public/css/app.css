@@ -1,4 +1,27 @@
- /* Estilos para el menú */
+/* Estilos generales */
+body, html {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    height: 100%;
+}
+
+#app {
+    min-height: calc(100vh - 150px);
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    color: #333;
+    padding-left: 65px;
+    font-size: 40px;
+    margin-top: 9px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* Menú */
 .menu-icon {
     position: fixed;
     top: 20px;
@@ -70,7 +93,7 @@
 }
 
 .menu-content li a:hover {
-    color: #3b3a3a; /* Color de hover */
+    color: #3b3a3a;
     font-weight: bold;
 }
 
@@ -78,20 +101,20 @@
     text-decoration: none;
     align-self: center;
     padding-left: 80px;
-    color: #828281;;
+    color: #828281;
     font-size: 16px;
     transition: transform 0.3s ease;
+}
+
+.menu-return a:hover {
+    color: #3b3a3a;
 }
 
 .menu-minilogo {
     width: 100px;
 }
 
-.menu-return a:hover {
-    color: #3b3a3a; /* Color de hover */
-}
-
-/* Estilos para el selector de pestañas */
+/* Selector de pestañas */
 .tab-selector {
     display: flex;
     justify-content: space-between;
@@ -114,19 +137,18 @@
 
 .tab-selector button.active {
     font-weight: bold;
-    color: #3b3a3a; /* Color del texto activo */
+    color: #3b3a3a;
 }
 
 .tab-underline {
     position: absolute;
-    bottom: 615px;
+    bottom: 605px;
     height: 5px;
-    background-color: #3b3a3a; /* Color de la línea */
+    background-color: #3b3a3a;
     width: 40%;
     transition: transform 0.3s ease;
 }
 
-/* Contenidos de las pestañas */
 .tab-content {
     padding: 20px;
     display: none;
@@ -136,11 +158,12 @@
     display: block;
 }
 
-/* Efecto de desenfoque en el fondo */
+/* Efecto de desenfoque */
 .blur {
     filter: blur(5px);
     transition: filter 0.3s ease;
 }
+
 .hero-container {
     display: flex;
     justify-content: space-between;
@@ -220,51 +243,43 @@
     width: 300px; 
 }
 
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-}
-
 .product-grid {
     display: flex;
-    justify-content: center; /* Centra el contenido */
-    flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea */
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr)); /* Máximo de 3 columnas */
-    gap: 20px; /* Espacio entre los productos */
-    max-width: 1000px; /* Ancho máximo de la cuadrícula */
-    margin: 0 auto; /* Centra la cuadrícula en la página */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .product-item {
-    /*border: px solid #ccc; Estilo del borde del producto */
-    border-radius: 8px; /* Esquinas redondeadas */
-    overflow: hidden; /* Evita que la imagen se desborde */
-    text-align: center; /* Centra el texto dentro del producto */
-    background-color: #f9f9f9; /* Fondo del producto */
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    background-color: #f9f9f9;
 }
 
 .image-container {
-    position: relative; /* Posicionamiento relativo para el efecto de zoom */
-    width: 100%; /* Ancho completo del contenedor */
-    height: 400px; /* Altura fija para mantener proporciones */
-    overflow: hidden; /* Esconde la parte de la imagen que exceda el contenedor */
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
 }
 
 .product-image {
-    width: 100%; /* Hace que la imagen ocupe el ancho completo */
-    height: auto; /* Mantiene la proporción de la imagen */
-    object-fit: cover; /* Asegura que la imagen cubra el contenedor */
-    transition: transform 0.3s ease; /* Transición suave para el efecto de zoom */
+    width: 100%;
+    height: 50%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
 }
 
 .product-image:hover {
-    transform: scale(1.1); /* Aumenta el tamaño de la imagen al pasar el mouse */
+    transform: scale(1.1);
 }
 
 .product-info {
@@ -292,12 +307,10 @@ body {
     color: #000000;
 }
 
-
 @media (max-width: 768px) {
     .product-grid {
         grid-template-columns: 1fr; 
     }
-
     .product-image {
         height: 200px; 
     }
@@ -307,79 +320,6 @@ body {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
-}
-
-.product-image {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-.product-info {
-    margin-top: 20px;
-}
-
-.product-info p {
-    font-size: 1.2em;
-    color: #666;
-}
-
-h1 {
-    color: #333;
-    padding-left: 65px;
-    font-size: 40px;
-    margin-top: 9px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
-.login-btn, .logout-btn {
-    display: block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #000;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.login-btn, .logout-btn:hover {
-    background-color: #000;
-    color: #fff;
-}
-
-.add-to-cart-btn {
-    border: 1px solid black;
-    background-color: white;
-    color: black;
-    padding: 10px 20px;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.add-to-cart-btn:hover {
-    background-color: black;
-    color: white;
-}
-
-.btn-cart {
-    display: block;
-    padding: 10px 20px;
-    background-color: #000;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.btn-cart:hover {
-    background-color: #000;
-    color: #fff;
 }
 
 .cart-page {
@@ -472,17 +412,15 @@ h1 {
     cursor: pointer;
 }
 
-/* Contenedor principal */
 .checkout-page {
-    max-width: 600px;  /* Tamaño máximo del contenedor */
-    margin: 50px auto; /* Centrar horizontalmente */
+    max-width: 600px;
+    margin: 50px auto;
     padding: 20px;
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Input de búsqueda de dirección */
 .location-container {
     margin-bottom: 20px;
 }
@@ -495,16 +433,14 @@ h1 {
     font-size: 1rem;
 }
 
-/* Mapa de Google */
 #map {
-    height: 300px;  /* Altura del mapa */
-    width: 100%;    /* Ancho del mapa */
+    height: 300px;
+    width: 100%;
     border-radius: 4px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px; /* Espacio debajo del mapa */
+    margin-bottom: 20px;
 }
 
-/* Selección de sucursal */
 .branch-selection {
     margin-bottom: 20px;
 }
@@ -514,10 +450,9 @@ label {
     color: #495057;
 }
 
-/* Estilos de botones */
 #confirm-order-btn {
-    background-color: #000000; /* Botón negro */
-    color: #ffffff; /* Texto blanco */
+    background-color: #000000;
+    color: #ffffff;
     padding: 12px 20px;
     border: none;
     border-radius: 4px;
@@ -528,11 +463,10 @@ label {
 }
 
 #confirm-order-btn:hover {
-    background-color: #ffffff; /* Cambiar a blanco en hover */
-    color: #000000; /* Texto negro */
+    background-color: #ffffff;
+    color: #000000;
 }
 
-/* Estilos de selección de método de pago */
 .payment-method-section {
     margin-bottom: 20px;
 }
@@ -541,12 +475,11 @@ label {
     margin-right: 15px;
 }
 
-/* Espaciado entre secciones */
 .branch-selection, .payment-method-section {
     padding: 10px;
     border: 1px solid #ced4da;
     border-radius: 4px;
-    background-color: #f8f9fa; /* Fondo gris claro */
+    background-color: #f8f9fa;
 }
 
 .footer {
@@ -559,18 +492,7 @@ label {
     bottom: 0;
     left: 0;
 }
+
 footer {
     margin-top: auto;
-}
-
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-#app {
-    min-height: calc(100vh - 150px);
-    display: flex;
-    flex-direction: column; /* Ajusta el tamaño restando la altura del footer */
 }

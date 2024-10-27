@@ -9,13 +9,11 @@ use Illuminate\Validation\ValidationException;
 
 class LoginController extends Controller
 {
-    // Mostrar el formulario de login
     public function showLoginForm()
     {
         return view('auth.login');
     }
 
-    // Manejar el login del usuario
     public function login(Request $request)
     {
         $credentials = $request->validate([
@@ -25,8 +23,6 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-
-            // Redirigir al inicio después de login exitoso
             return redirect('/');
         }
 
@@ -35,11 +31,9 @@ class LoginController extends Controller
         ]);
     }
 
-    // Manejar el logout
     public function logout(Request $request)
     {
         Auth::logout();
-
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 

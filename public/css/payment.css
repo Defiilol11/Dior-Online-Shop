@@ -1,0 +1,73 @@
+/* Estilos específicos para la página de checkout */
+.checkout-page .checkout-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.checkout-page .checkout-input-field, 
+.checkout-page .checkout-select-field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.checkout-page .checkout-radio-label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.checkout-page .checkout-form-group {
+    margin-bottom: 15px;
+}
+
+.checkout-page .checkout-payment-method-options {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estilos específicos para métodos de pago */
+.checkout-page .method-tarjeta {
+    color: #4CAF50; /* Verde para tarjeta */
+    font-weight: bold;
+}
+
+.checkout-page .method-transferencia {
+    color: #007BFF; /* Azul para transferencia */
+    font-weight: bold;
+}
+
+.checkout-page .method-efectivo {
+    color: #FF9800; /* Naranja para efectivo */
+    font-weight: bold;
+}
+
+/* Formulario de pago */
+.checkout-page .checkout-payment-form {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Estilo del botón */
+.checkout-page .checkout-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.checkout-page .checkout-btn:hover {
+    background-color: #45a049;
+}

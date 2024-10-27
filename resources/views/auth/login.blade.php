@@ -5,46 +5,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - DIOR</title>
-    <!-- Incluimos Tailwind CSS para los estilos -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        // Función para mostrar alerta en caso de error
-        function showAlert() {
-            alert('No se ha iniciado sesión correctamente.');
-        }
-    </script>
+    <title>Login - Cristian Dior</title>
+    <!-- Incluimos SweetAlert2 para las alertas personalizadas -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Vinculamos el archivo CSS personalizado -->
+    <link rel="stylesheet" href="/css/custom-login.css">
 </head>
-<body class="bg-white flex items-center justify-center min-h-screen">
+<body class="bg-light-gray">
 
-    <div class="w-full max-w-md">
-        <div class="flex justify-center mb-6">
-            <img src="https://companieslogo.com/img/orig/CDI.PA_BIG-0bd74bba.png?t=1720244491" alt="DIOR Logo" class="h-20">
+    <div class="login-container">
+        <div class="logo-container">
+            <img src="https://companieslogo.com/img/orig/CDI.PA_BIG-0bd74bba.png?t=1720244491" alt="Meat Pack Logo" class="logo">
         </div>
 
-        <div class="bg-white border border-gray-300 rounded-md shadow-lg p-8">
+        <div class="form-container">
             <form method="POST" action="{{ route('login') }}" onsubmit="return checkLogin(event)">
                 @csrf
 
-                <div class="mb-4">
-                    <label for="email" class="block font-bold text-black mb-2">Email</label>
-                    <input id="email" class="block w-full p-2 border border-black rounded" type="email" name="email" required autofocus>
+                <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <input id="email" class="form-input" type="email" name="email" required autofocus>
                 </div>
 
-                <div class="mb-4">
-                    <label for="password" class="block font-bold text-black mb-2">Password</label>
-                    <input id="password" class="block w-full p-2 border border-black rounded" type="password" name="password" required>
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <input id="password" class="form-input" type="password" name="password" required>
                 </div>
 
-                <div class="mb-6">
-                    <button class="w-full p-2 border border-black text-black font-bold uppercase rounded transition duration-150 ease-in-out hover:bg-black hover:text-white">
+                <div class="form-group">
+                    <button class="btn btn-submit">
                         Iniciar Sesión
                     </button>
                 </div>
             </form>
 
             <div class="text-center">
-                <a href="{{ route('register') }}" class="text-black border border-black p-2 rounded hover:bg-black hover:text-white transition duration-150 ease-in-out">
+                <a href="{{ route('register') }}" class="btn btn-register">
                     Registrarse
                 </a>
             </div>
@@ -53,21 +49,54 @@
 
     <script>
         function checkLogin(event) {
-            // Aquí podrías implementar una verificación de estado en caso de que se produzca un error
-            // Pero para este caso, asumiremos que el inicio de sesión puede fallar
-            // Esto es solo un ejemplo, puedes implementar lógica para verificar el resultado
+            // Simulación de éxito o error
             const loginSuccess = true; // Cambia esto a true si el login es exitoso
 
             if (!loginSuccess) {
-                event.preventDefault(); // Evita que se envíe el formulario
-                showAlert(); // Muestra la alerta
+                event.preventDefault(); // Evita que se envíe el formulario si falla
+
+                // Mostrar alerta de error con SweetAlert2
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error de inicio de sesión',
+                    text: 'No se ha podido iniciar sesión. Verifica tus credenciales.',
+                    confirmButtonText: 'Aceptar',
+                    background: '#f8d7da',
+                    customClass: {
+                        popup: 'rounded-lg'
+                    }
+                });
+            } else {
+                // Si el login es exitoso, muestra una alerta de éxito (opcional)
+                Swal.fire({
+                    icon: 'success',
+                    title: '¡Bienvenido!',
+                    text: 'Has iniciado sesión correctamente.',
+                    confirmButtonText: 'Continuar',
+                    background: '#d4edda',
+                    customClass: {
+                        popup: 'rounded-lg'
+                    }
+                });
             }
         }
     </script>
+
+    <!-- Aquí puedes manejar las alertas basadas en la sesión -->
+    @if(session('alert'))
+        <script>
+            Swal.fire({
+                icon: '{{ session('alert_type') }}', // Usa session para determinar el tipo de alerta (success, error, etc.)
+                title: '{{ session('alert_title') }}',
+                text: '{{ session('alert') }}',
+                confirmButtonText: 'Aceptar',
+                background: '#f8d7da',
+                customClass: {
+                    popup: 'rounded-lg'
+                }
+            });
+        </script>
+    @endif
+
 </body>
 </html>
-@if(session('alert'))
-    <script>
-        alert('{{ session('alert') }}');
-    </script>
-@endif

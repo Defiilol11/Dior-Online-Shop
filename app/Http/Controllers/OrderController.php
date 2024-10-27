@@ -8,11 +8,9 @@ use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
-    // OrderController.php
     public function index()
     {
         $orders = Order::where('user_id', Auth::id())->get();
-
         return view('orders.index', compact('orders'));
     }
 }

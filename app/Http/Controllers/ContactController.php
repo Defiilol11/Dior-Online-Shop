@@ -10,35 +10,29 @@ class ContactController extends Controller
 {
     public function send(Request $request)
     {
-        // Valida la entrada
         $request->validate([
             'title' => 'required|string|max:255',
             'message' => 'required|string',
         ]);
 
-        // Obtiene el correo y nombre del usuario autenticado
         $user = Auth::user();
         $userEmail = $user->email;
-        $userName = $user->name;  // Asegúrate de que tengas el campo 'name' en la tabla de usuarios
+        $userName = $user->name;
 
-        // Asigna el correo del vendedor
-        $vendedorEmail = 'carlitostaracenacoronado@gmail.com'; // Cambia esto al correo del vendedor
+        $vendedorEmail = 'carlitostaracenacoronado@gmail.com';
 
-        // Construye el contenido del correo
         $correoMensaje = "Has recibido un nuevo mensaje de contacto.\n\n";
         $correoMensaje .= "De: {$userName} ({$userEmail})\n";
         $correoMensaje .= "Título: {$request->title}\n\n";
         $correoMensaje .= "Mensaje:\n{$request->message}\n";
 
-        // Envía el correo
         Mail::raw($correoMensaje, function ($message) use ($userEmail, $userName, $vendedorEmail) {
             $message->to($vendedorEmail)
-                    ->from($userEmail, $userName) // Desde el correo y nombre del usuario autenticado
-                    ->replyTo($userEmail)         // Configura el "reply-to" al correo del usuario
+                    ->from($userEmail, $userName)
+                    ->replyTo($userEmail)
                     ->subject('Nuevo mensaje de contacto');
         });
 
-        // Redirige a la página de inicio con un mensaje de éxito
         return redirect('/')->with('success', 'Mensaje enviado con éxito.');
     }
 }

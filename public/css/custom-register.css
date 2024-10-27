@@ -1,0 +1,120 @@
+/* Estilos generales */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    height: 100%;
+}
+
+/* Centrar el formulario en la página */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    max-width: 400px;
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor del logo */
+.logo-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo {
+    height: 50px;
+    max-width: 100%;
+    margin-top: -300px;
+    object-fit: contain;
+}
+
+/* Formulario */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit {
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+    border: none;
+}
+
+.btn-submit:hover {
+    background-color: #555;
+}
+
+/* Texto de ayuda */
+.text {
+    color: #000;
+}
+
+/* Enlaces */
+.link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+/* Estilo del cuerpo */
+.bg-light-gray {
+    background-color: #f5f5f5;
+}
+
+/* Estilo del botón negro */
+.btn-black {
+    background-color: #000000 !important; 
+    color: #ffffff !important;
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 10px 20px;
+}
+
+.btn-black:hover {
+    background-color: #333333 !important;
+}

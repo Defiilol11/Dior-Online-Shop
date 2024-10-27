@@ -1,0 +1,95 @@
+/* Estilos para el contenedor de la cuadrícula */
+.product-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Estilos para la cuadrícula en pantallas grandes */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Estilo del producto individual */
+.product-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+}
+
+/* Efecto hover en el producto */
+.product-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo de la imagen del producto */
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.product-item:hover .product-image {
+    transform: scale(1.05);
+}
+
+/* Estilo de la información del producto */
+.product-info {
+    padding: 10px 0;
+}
+
+.product-info h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.product-info p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #666;
+}
+
+/* Enlace del producto para eliminar subrayado y color predeterminado */
+.product-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .product-image {
+        height: 180px;
+    }
+
+    .product-info h2 {
+        font-size: 1.1rem;
+    }
+
+    .product-info p {
+        font-size: 0.9rem;
+    }
+}

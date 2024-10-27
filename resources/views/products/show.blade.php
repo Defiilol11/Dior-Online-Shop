@@ -1,13 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
+<link rel="stylesheet" href="{{ asset('css/productshow.css') }}">
     <h1>{{ $product->name }}</h1>
 
     <div class="product-detail">
         <img src="{{ $product->image_url }}" alt="{{ $product->name }}" class="product-image">
         <div class="product-info">
             <p>{{ $product->description }}</p>
-            <p>Precio: ${{ $product->price }}</p>
+            <p>Precio: Q{{ $product->price }}</p>
             <p>Disponibles: {{ $product->stock }}</p>
             <form method="POST" action="{{ route('cart.add', $product->id) }}">
             @csrf
