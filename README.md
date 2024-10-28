@@ -1,6 +1,3 @@
-Mis disculpas por la confusión. Aquí está el código en Markdown puro, sin HTML adicional:
-
-```markdown
 # Dior Project
 
 ![Dior Logo](https://www.dior.com/couture/var/dior/storage/images/logos/dior-logo/438922-1-eng-GB/Dior-logo.png)
@@ -80,6 +77,3 @@ Contributions to improve the Dior project are welcome! For major changes, please
 ## License
 
 This project is open-source and licensed under the [MIT license](https://opensource.org/licenses/MIT).
-```
-
-Este README está ahora completamente en Markdown, sin HTML adicional, adecuado para un proyecto personal de la página de Dior.
